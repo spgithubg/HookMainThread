@@ -38,7 +38,7 @@ def hook_proc(hwnd, msg, wParam, lParam):
         my_callback(lParam)
         # 在此处处理您的自定义消息
 
-    # Ensure all other messages are handled by the original window procedure
+    # 确保所有其他消息都由原始窗口过程处理
     return CallWindowProc(WNDPROC(original_wnd_proc), hwnd, msg, wParam, lParam)
 
 
@@ -62,7 +62,7 @@ def un_hook(hwnd):
         return False
 
 
-# Function to get hwnd by pid
+# 通过 pid 获取 hwnd 的函数
 def get_hwnd_by_pid(pid):
     hwnds = []
 
@@ -76,7 +76,7 @@ def get_hwnd_by_pid(pid):
     return hwnds
 
 
-# Example usage
+# 示例用法
 if __name__ == "__main__":
     hwnds = get_hwnd_by_pid(os.getpid())
     if hwnds:
